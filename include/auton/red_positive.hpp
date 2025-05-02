@@ -26,32 +26,30 @@ void red_positive(){
         
         conveyor.moveToState(ConveyorNamespace::State::FORWARDS);
         intake_raiser.moveToState(HolderNamespace::State::HOLD);
-        chassis.turnToPoint(-40,-6, 600, {.maxSpeed = 127}, false);
-        chassis.moveToPoint(-40, -6, 900, {.maxSpeed = 127}, false);
+        chassis.turnToPoint(-40,-3, 900, {.maxSpeed = 127}, false);
+        chassis.moveToPoint(-40, -3, 1000, {.maxSpeed = 127}, false);
+        chassis.waitUntilDone();
         intake_raiser.moveToState(HolderNamespace::State::RELEASE);
         chassis.moveDistance(-8,500, {.forwards = false, .maxSpeed = 127}, false);
-
-
-    
         
-    
-       chassis.moveToPoint(-50,-60, 1200, {.maxSpeed = 127}, false);
+
+       chassis.moveToPoint(-50,-70, 1200, {.maxSpeed = 127}, false);
        chassis.turnToHeading(225, 800, {.maxSpeed = 127}, false);
        chassis.moveDistance(40,1100, {.minSpeed = 127}, false);
        chassis.moveDistance(-15,600, {.forwards = false, .maxSpeed = 127}, false);
        chassis.moveDistance(11,600, {.maxSpeed = 127}, false);
 
-       chassis.turnToHeading(180, 900, {.maxSpeed = 127}, true);
-       chassis.correctAt180({"front","right"});
-       chassis.turnToPoint(-24, -46, 1000, {.maxSpeed = 127}, false);
+       chassis.turnToHeading(90, 900, {.maxSpeed = 127}, true);
+       chassis.correctAt90({"right"});
+       chassis.turnToPoint(-24, -48, 1000, {.maxSpeed = 127}, false);
+       chassis.moveDistance(35, 900, {.maxSpeed = 127}, false);
 
-       chassis.moveDistance(35, 1000, {.maxSpeed = 100}, false);
        pros::delay(200);
        chassis.moveDistance(-40,700, {.forwards = false, .maxSpeed = 100}, false);
        holder.moveToState(HolderNamespace::State::RELEASE);
     
-       
+       chassis.turnToPoint(0, -24, 500, {.maxSpeed = 127}, false);
        conveyor.moveToState(ConveyorNamespace::State::STOP);
     
-       chassis.moveToPoint(-16, -16, 3000, {.maxSpeed = 90}, false);
+       chassis.moveToPoint(-16, -18, 3000, {.maxSpeed = 90}, false);
 }

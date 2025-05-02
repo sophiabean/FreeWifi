@@ -2,7 +2,7 @@
 
 // Arm
 constexpr float MAX_DEGREES = 25000.0f; // 150 degrees
-constexpr float WAIT_DEGREES = 4000.0f; // 35 degrees
+constexpr float WAIT_DEGREES = 3500.0f; // 35 degrees
 constexpr float DOWN_DEGREES = 1500.0f; // 15 degrees
 constexpr float VERTICAL_DEGREES = 11000; 
 constexpr float DISCORE_DEGREES = 15000; // 150 degrees
@@ -34,4 +34,4 @@ constexpr double DIST_THRESHOLD = 55;
 
 constexpr bool AUTO_STARTED = true;
 
-constexpr bool RUN_SKILLS = true;
+constexpr bool RUN_SKILLS = false;

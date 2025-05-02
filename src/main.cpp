@@ -94,12 +94,15 @@ ASSET(example_txt); // '.' replaced with "_" to make c++ happy
  * This is an example autonomous routine which demonstrates a lot of the features LemLib has to offer
  */
 void autonomous() {
-     skills();
+    //BRO IS SKILLS RUN == TRUE? ARE YOU U DUMB? (yes)
+
+    // skills();
     // blue_left_wp();//blue positive
     // skills_states();
-    // signature_blue_negtive();
-    // signature_red_negtive_qual();
-    // red_positive(); 
+    signature_blue_negtive();
+    //signature_red_negtive_qual();
+    //red_positive();
+    //blue_positive();
     // red_right_sweep();
     // if (RUN_SKILLS) skills();
     // else selector.run_auton();
@@ -107,6 +110,7 @@ void autonomous() {
     // red_six_rings();
     // red_solo();
     // blue_solo();
+    // test_auton();
     // return;
 }
 
