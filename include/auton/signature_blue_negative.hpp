@@ -1,4 +1,4 @@
-#pragma once
+    #pragma once
 #include "components.hpp"
 
 void signature_blue_negtive(){
@@ -31,6 +31,7 @@ void signature_blue_negtive(){
     chassis.moveToPoint(12, 24, 900, {.forwards = false, .maxSpeed = 100}, false);
     chassis.turnToHeading(0, 500, {.maxSpeed = 127}, false);
     chassis.moveDistance(20, 500, {.maxSpeed = 127}, false);
+    chassis.waitUntilDone();
     chassis.correctAt0({"front"});
     chassis.turnToHeading(-90, 800, {.maxSpeed = 127}, false);
     //chassis.correctAt90({"left"});

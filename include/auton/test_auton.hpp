@@ -1,6 +1,6 @@
 #pragma once
 #include "components.hpp"
 
-void freewifi() {
-
+void test_auton(){
+    
 }

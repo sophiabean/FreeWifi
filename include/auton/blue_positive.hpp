@@ -2,7 +2,7 @@
 #include "components.hpp"
 
 void blue_positive() {
-    arm.resetRotation(3500.0f);
+    //arm.resetRotation(3500.0f);
     conveyor.setInitColor(ConveyorNamespace::Color::BLUE);
     chassis.setPose(51.25, -11, 60);
 
@@ -13,12 +13,12 @@ void blue_positive() {
     // arm.moveToState(ArmNamespace::State::WAIT);
     // pros::delay(300);
     // conveyor.moveToState(ConveyorNamespace::State::FORWARDS, 500);
-    chassis.moveDistance(5, 350, {.maxSpeed = 127}, true);
-    arm.moveToState(ArmNamespace::State::UP);
+    //chassis.moveDistance(5, 350, {.maxSpeed = 127}, true);
+    //arm.moveToState(ArmNamespace::State::UP);
     chassis.waitUntilDone();
     chassis.moveToPoint(37.5, -17.5, 700, {.forwards = false, .maxSpeed = 127}, false);
     chassis.moveToPoint(24, -24, 1100, {.forwards = false, .maxSpeed = 65}, true);
-    arm.moveToState(ArmNamespace::State::DOWN);
+    //arm.moveToState(ArmNamespace::State::DOWN);
     chassis.waitUntil(12);
     holder.moveToState(HolderNamespace::State::HOLD);
 
@@ -27,11 +27,9 @@ void blue_positive() {
     intake_raiser.moveToState(HolderNamespace::State::HOLD);
     chassis.turnToPoint(41,-7, 500, {.maxSpeed = 127}, false);
     chassis.moveToPoint(41, -7, 900, {.maxSpeed = 127}, false);
+    chassis.waitUntilDone();
     intake_raiser.moveToState(HolderNamespace::State::RELEASE);
     chassis.moveDistance(-8,500, {.forwards = false, .maxSpeed = 127}, false);
-
-
-
     
 
    chassis.moveToPoint(59,-59, 1200, {.maxSpeed = 127}, false);
@@ -46,7 +44,7 @@ void blue_positive() {
    chassis.turnToHeading(180, 900, {.maxSpeed = 127}, false);
    chassis.correctAt180({"front","left"});
    chassis.turnToPoint(24, -48, 1000, {.maxSpeed = 127}, false);
-   chassis.moveDistance(35,900, {.maxSpeed = 127}, false);
+   chassis.moveDistance(35 ,900, {.maxSpeed = 127}, false);
 
    pros::delay(200);
    chassis.moveDistance(-35,700, {.forwards = false, .maxSpeed = 100}, false);
