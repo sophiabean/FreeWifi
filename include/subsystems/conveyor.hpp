@@ -40,11 +40,11 @@ class Conveyor : public subsystem<ConveyorNamespace::State> {
             if (optical_sensor_ != nullptr and optical_sensor_->get_hue() != PROS_ERR_F) {
                 switch (this->init_color_) {
                     case RED:
-                        if (optical_sensor_->get_hue() > BLUE_THRESHOLD and optical_sensor_->get_hue() < HIGH_THRESHOLD)
+                        if (optical_sensor_->get_hue() > BLUE_LOW_THRESHOLD and optical_sensor_->get_hue() < BLUE_HIGH_THRESHOLD)
                             return true;
                         return false;
                     case BLUE:
-                        if (optical_sensor_->get_hue() < RED_THRESHOLD or optical_sensor_->get_hue() > HIGH_THRESHOLD)
+                        if (optical_sensor_->get_hue() < RED_LOW_THRESHOLD or optical_sensor_->get_hue() > RED_HIGH_THRESHOLD)
                             return true;
                         return false;
                 }

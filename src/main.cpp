@@ -96,12 +96,12 @@ ASSET(example_txt); // '.' replaced with "_" to make c++ happy
 void autonomous() {
     //BRO IS SKILLS RUN == TRUE? ARE YOU U DUMB? (yes)
 
-    // skills();
+    //skills();
     // blue_left_wp();//blue positive
     // skills_states();
-    signature_blue_negtive();
+    //signature_blue_negtive();
     //signature_red_negtive_qual();
-    //red_positive();
+    red_positive();
     //blue_positive();
     // red_right_sweep();
     // if (RUN_SKILLS) skills();

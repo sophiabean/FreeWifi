@@ -23,9 +23,10 @@ constexpr double FRONT_OFFSET_INCHES = 6;
 constexpr double FEILD_SIZE = 71;
 
 // Conveyor
-constexpr double HIGH_THRESHOLD = 330;
-constexpr double RED_THRESHOLD = 30; // detect red (HIGH_THRESHOLD, 360) and (0, RED_THRESHOLD)
-constexpr double BLUE_THRESHOLD = 160; // detect blue (BLUE_THRESHOLD, HIGH_THRESHOLD)
+constexpr double RED_HIGH_THRESHOLD = 330;
+constexpr double RED_LOW_THRESHOLD = 15; // detect red (HIGH_THRESHOLD, 360) and (0, RED_THRESHOLD) used to be 30, just red
+constexpr double BLUE_HIGH_THRESHOLD = 270; // detect blue (BLUE_THRESHOLD, HIGH_THRESHOLD) used to be 160, just blue
+constexpr double BLUE_LOW_THRESHOLD = 180; // detect blue (BLUE_THRESHOLD, HIGH_THRESHOLD) used to be 160, just blue
 constexpr int STUCK_CURRENT = 2000;
 constexpr int STUCK_RPM = 50;
 
