@@ -1,5 +1,13 @@
-    #pragma once
+#pragma once
 #include "components.hpp"
+
+
+// make going towards ladder at end faster bc ran out of time
+// ram corner better, same as blue pos
+
+
+
+
 
 void signature_blue_negtive(){
     arm.resetRotation(3500.0f);
@@ -22,11 +30,11 @@ void signature_blue_negtive(){
     chassis.waitUntil(12);
     holder.moveToState(HolderNamespace::State::HOLD);
 
-    
+
     conveyor.moveToState(ConveyorNamespace::State::FORWARDS);
-    chassis.turnToHeading(330, 800, {.maxSpeed = 127}, false); 
+    chassis.turnToHeading(330, 800, {.maxSpeed = 127}, false);
     chassis.waitUntilDone();
- 
+
     chassis.moveDistance(22, 1050, {.maxSpeed = 127}, false);
     chassis.moveToPoint(12, 24, 900, {.forwards = false, .maxSpeed = 100}, false);
     chassis.turnToHeading(0, 500, {.maxSpeed = 127}, false);

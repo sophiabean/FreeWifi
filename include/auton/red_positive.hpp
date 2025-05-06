@@ -42,7 +42,7 @@ void red_positive(){
         // go toward corner
         chassis.moveToPoint(-60,-70, 2000, {.maxSpeed = 90}, false); //used to be -50, -70
         chassis.waitUntilDone();
-        // goes in at 45 degrees
+        // goes in at 55 degrees
         chassis.turnToHeading(235, 800, {.maxSpeed = 90}, false);
         // nudge the corner stack with the intake raiser while ramming
         chassis.moveDistance(40,1100, {.minSpeed = 127}, true);
