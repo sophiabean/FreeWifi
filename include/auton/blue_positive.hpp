@@ -2,27 +2,32 @@
 #include "components.hpp"
 
 void blue_positive() {
-    //arm.resetRotation(3500.0f);
+    arm.resetRotation(3500.0f); // code was commented
     conveyor.setInitColor(ConveyorNamespace::Color::BLUE);
     chassis.setPose(51.25, -11, 60);
 
     //pros::delay(2500);
     //normal arm code
-
+    //code was commented
     //back up arm code
-    // arm.moveToState(ArmNamespace::State::WAIT);
-    // pros::delay(300);
-    // conveyor.moveToState(ConveyorNamespace::State::FORWARDS, 500);
-    //chassis.moveDistance(5, 350, {.maxSpeed = 127}, true);
-    //arm.moveToState(ArmNamespace::State::UP);
+    //arm.moveToState(ArmNamespace::State::WAIT);
+    //pros::delay(300);
+    //conveyor.moveToState(ConveyorNamespace::State::FORWARDS, 500);
+
+    //go forwards and score alliance steak
+    chassis.moveDistance(5, 350, {.maxSpeed = 127}, true);
+    arm.moveToState(ArmNamespace::State::UP);
     chassis.waitUntilDone();
-    chassis.moveToPoint(37.5, -17.5, 700, {.forwards = false, .maxSpeed = 127}, false);
+    //code was commented
+    // goes backwards towards mobile goal
+    chassis.moveToPoint(37.5, -17.5, 700, {.forwards = false, .maxSpeed = 70}, false);
     chassis.moveToPoint(24, -24, 1100, {.forwards = false, .maxSpeed = 65}, true);
-    //arm.moveToState(ArmNamespace::State::DOWN);
+    arm.moveToState(ArmNamespace::State::DOWN); //code was commented
     chassis.waitUntil(12);
     holder.moveToState(HolderNamespace::State::HOLD);
+    chassis.waitUntil(17);
 
-    
+    // first stack
     conveyor.moveToState(ConveyorNamespace::State::FORWARDS);
     intake_raiser.moveToState(HolderNamespace::State::HOLD);
     chassis.turnToPoint(41,-7, 500, {.maxSpeed = 127}, false);
@@ -30,31 +35,38 @@ void blue_positive() {
     chassis.waitUntilDone();
     intake_raiser.moveToState(HolderNamespace::State::RELEASE);
     chassis.moveDistance(-8,500, {.forwards = false, .maxSpeed = 127}, false);
-    
+    pros::delay(300);
 
-   chassis.moveToPoint(59,-59, 1200, {.maxSpeed = 127}, false);
+    chassis.moveToPoint(66,-60, 1500, {.maxSpeed = 127}, true);
+    intake_raiser.moveToState(HolderNamespace::State::HOLD);
+    chassis.waitUntilDone();
+    //goes into corner at 55 degrees
+    chassis.turnToHeading(135, 500, {.maxSpeed = 127}, false);
+    //rams into corner, should also lift intake
+    chassis.moveDistance(40, 800, {.maxSpeed = 127}, true);
+    pros::delay(600);
+    intake_raiser.moveToState(HolderNamespace::State::RELEASE);
+    chassis.waitUntilDone();
+    //moves back
+    chassis.moveDistance(-15,800, {.forwards = false, .maxSpeed = 127}, false);
+    //goes back in (all the way) for second ring
+    chassis.moveDistance(15, 600, {.maxSpeed = 127}, false); //used to be (10, 600,
 
-   chassis.turnToHeading(125, 1000, {.maxSpeed = 127}, false);
+    //blue on bottom stack
+    chassis.turnToHeading(180, 900, {.maxSpeed = 127}, false);
+    chassis.correctAt180({"front","left"});
+    chassis.turnToPoint(24, -53, 1000, {.maxSpeed = 127}, false);
+    chassis.moveDistance(35 ,900, {.maxSpeed = 127}, false);
 
-   chassis.moveDistance(40,1000, {.maxSpeed = 127}, false);
-   chassis.moveDistance(-15,600, {.forwards = false, .maxSpeed = 127}, false);
-   chassis.moveDistance(10, 600, {.maxSpeed = 127}, false);
+    pros::delay(200);
+    chassis.moveDistance(-35,700, {.forwards = false, .maxSpeed = 100}, false);
+    holder.moveToState(HolderNamespace::State::RELEASE);
 
+    //ladder
+    chassis.turnToPoint(0, -24, 500, {.maxSpeed = 127}, false);
+    conveyor.moveToState(ConveyorNamespace::State::STOP);
 
-   chassis.turnToHeading(180, 900, {.maxSpeed = 127}, false);
-   chassis.correctAt180({"front","left"});
-   chassis.turnToPoint(24, -48, 1000, {.maxSpeed = 127}, false);
-   chassis.moveDistance(35 ,900, {.maxSpeed = 127}, false);
+    chassis.moveToPoint(4, -28, 2000, {.maxSpeed = 55}, false);
 
-   pros::delay(200);
-   chassis.moveDistance(-35,700, {.forwards = false, .maxSpeed = 100}, false);
-   holder.moveToState(HolderNamespace::State::RELEASE);
-
-   
-   chassis.turnToPoint(0, -24, 500, {.maxSpeed = 127}, false);
-   conveyor.moveToState(ConveyorNamespace::State::STOP);
-
-   chassis.moveToPoint(6, -28, 2000, {.maxSpeed = 47}, false);
-   
 
 }
