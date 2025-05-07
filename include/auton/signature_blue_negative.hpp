@@ -1,13 +1,8 @@
 #pragma once
 #include "components.hpp"
 
-
 // make going towards ladder at end faster bc ran out of time
 // ram corner better, same as blue pos
-
-
-
-
 
 void signature_blue_negtive(){
     arm.resetRotation(3500.0f);
@@ -43,7 +38,7 @@ void signature_blue_negtive(){
     chassis.correctAt0({"front"});
     chassis.turnToHeading(-90, 800, {.maxSpeed = 127}, false);
     //chassis.correctAt90({"left"});
-    chassis.moveDistance(15, 800, {.maxSpeed = 127}, false);
+    chassis.moveDistance(13, 800, {.maxSpeed = 127}, false);
     chassis.moveDistance(-35, 800, {.forwards = false, .maxSpeed = 80}, false);
     chassis.turnToHeading(45, 800, {.maxSpeed = 127}, false);
     chassis.moveDistance(40, 1100, {.minSpeed = 127}, false);
