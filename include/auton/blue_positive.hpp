@@ -38,14 +38,12 @@ void blue_positive() {
     pros::delay(300);
 
     chassis.moveToPoint(66,-60, 1500, {.maxSpeed = 127}, true);
-    intake_raiser.moveToState(HolderNamespace::State::HOLD);
     chassis.waitUntilDone();
     //goes into corner at 55 degrees
     chassis.turnToHeading(135, 500, {.maxSpeed = 127}, false);
     //rams into corner, should also lift intake
     chassis.moveDistance(40, 800, {.maxSpeed = 127}, true);
     pros::delay(600);
-    intake_raiser.moveToState(HolderNamespace::State::RELEASE);
     chassis.waitUntilDone();
     //moves back
     chassis.moveDistance(-15,800, {.forwards = false, .maxSpeed = 127}, false);
