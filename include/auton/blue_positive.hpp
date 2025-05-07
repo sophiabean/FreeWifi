@@ -37,14 +37,16 @@ void blue_positive() {
     chassis.moveDistance(-8,500, {.forwards = false, .maxSpeed = 127}, false);
     pros::delay(300);
 
-    chassis.moveToPoint(66,-60, 1500, {.maxSpeed = 127}, true);
-    chassis.waitUntilDone();
+    // go for the corner stack
+    chassis.moveToPoint(54,-30, 400, {.maxSpeed = 100}, false);
+    chassis.moveToPoint(56,-44, 1200, {.maxSpeed = 100}, false);
+    // chassis.waitUntilDone();
     //goes into corner at 55 degrees
     chassis.turnToHeading(135, 500, {.maxSpeed = 127}, false);
     //rams into corner, should also lift intake
-    chassis.moveDistance(40, 800, {.maxSpeed = 127}, true);
-    pros::delay(600);
-    chassis.waitUntilDone();
+    chassis.moveDistance(40, 800, {.maxSpeed = 127}, false);
+    // pros::delay(600);
+    // chassis.waitUntilDone();
     //moves back
     chassis.moveDistance(-15,800, {.forwards = false, .maxSpeed = 127}, false);
     //goes back in (all the way) for second ring
@@ -53,18 +55,19 @@ void blue_positive() {
     //blue on bottom stack
     chassis.turnToHeading(180, 900, {.maxSpeed = 127}, false);
     chassis.correctAt180({"front","left"});
-    chassis.turnToPoint(24, -53, 1000, {.maxSpeed = 127}, false);
+    chassis.turnToPoint(24, -56, 1000, {.maxSpeed = 127}, false);
     chassis.moveDistance(35 ,900, {.maxSpeed = 127}, false);
 
     pros::delay(200);
-    chassis.moveDistance(-35,700, {.forwards = false, .maxSpeed = 100}, false);
+    chassis.moveDistance(-30,700, {.forwards = false, .maxSpeed = 100}, false);
+    pros::delay(300);
     holder.moveToState(HolderNamespace::State::RELEASE);
 
     //ladder
     chassis.turnToPoint(0, -24, 500, {.maxSpeed = 127}, false);
     conveyor.moveToState(ConveyorNamespace::State::STOP);
 
-    chassis.moveToPoint(4, -28, 2000, {.maxSpeed = 55}, false);
+    chassis.moveToPoint(4, -22, 2000, {.maxSpeed = 55}, false);
 
 
 }

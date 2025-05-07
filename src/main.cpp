@@ -99,10 +99,10 @@ void autonomous() {
     //skills();
     // blue_left_wp();//blue positive
     // skills_states();
-    signature_blue_negtive();
+    // signature_blue_negtive();
     //signature_red_negtive_qual();
     //red_positive();
-    //blue_positive();
+    blue_positive();
     // red_right_sweep();
     // if (RUN_SKILLS) skills();
     // else selector.run_auton();
