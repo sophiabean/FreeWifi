@@ -21,15 +21,16 @@ void signature_red_negtive_qual(){
     chassis.moveToPoint(-24, 24, 1100, {.forwards = false, .maxSpeed = 65}, true);
     arm.moveToState(ArmNamespace::State::DOWN);
     chassis.waitUntil(13);
+    //clamp mobile goal
     holder.moveToState(HolderNamespace::State::HOLD);
 
-    //goes to get first ring
+    //goes to get first ring in group of 8
     conveyor.moveToState(ConveyorNamespace::State::FORWARDS);
     chassis.turnToHeading(26, 800, {.maxSpeed = 127}, false);
     chassis.waitUntilDone();
     chassis.moveDistance(20, 800, {.maxSpeed = 127}, false);
 
-    //goes for the middle ring
+    //goes for the middle ring in top of
     chassis.moveToPoint(-26, 24, 800, {.forwards = false, .maxSpeed = 100}, false);
     chassis.turnToHeading(0, 500, {.maxSpeed = 127}, false);
     chassis.moveDistance(20, 650, {.maxSpeed = 127}, false);

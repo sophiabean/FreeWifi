@@ -56,7 +56,7 @@ void blue_positive() {
     chassis.turnToHeading(180, 900, {.maxSpeed = 127}, false);
     chassis.correctAt180({"front","left"});
     chassis.turnToPoint(24, -56, 1000, {.maxSpeed = 127}, false);
-    chassis.moveDistance(35 ,900, {.maxSpeed = 127}, false);
+    chassis.moveDistance(24 ,900, {.maxSpeed = 127}, false);
 
     pros::delay(200);
     chassis.moveDistance(-30,700, {.forwards = false, .maxSpeed = 100}, false);
