@@ -104,7 +104,7 @@ class Conveyor : public subsystem<ConveyorNamespace::State> {
             }
 
             if (currState == ConveyorNamespace::State::FORWARDS) {
-                if (enable_color_sensor_ && detectWrongRing()) reverse_ = true;
+                if (enable_color_sensor_ && optical_sensor_->get_proximity() > 150 && detectWrongRing()) reverse_ = true;
                 if (reverse_ && distance_ != nullptr && distance_->get_distance() < DIST_THRESHOLD) {
                     intake_->moveToState(SpinnerNamespace::State::FORWARD);
                     hooks_->moveToState(SpinnerNamespace::State::FORWARD);
@@ -121,7 +121,7 @@ class Conveyor : public subsystem<ConveyorNamespace::State> {
             }
             if (currState == ConveyorNamespace::State::REVERSE) {
                 intake_->moveToState(SpinnerNamespace::State::BACKWARD);
-                hooks_->moveToState(SpinnerNamespace::State::BACKWARD);               
+                hooks_->moveToState(SpinnerNamespace::State::BACKWARD);
             }
             if (currState == ConveyorNamespace::State::STOP) {
                 intake_->moveToState(SpinnerNamespace::State::IDLE);
