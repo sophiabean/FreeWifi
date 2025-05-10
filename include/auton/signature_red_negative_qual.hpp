@@ -33,19 +33,19 @@ void signature_red_negtive_qual(){
     //goes for the middle ring in top of
     chassis.moveToPoint(-26, 24, 800, {.forwards = false, .maxSpeed = 100}, false);
     chassis.turnToHeading(0, 500, {.maxSpeed = 127}, false);
-    chassis.moveDistance(20, 650, {.maxSpeed = 127}, false);
+    chassis.moveDistance(26, 650, {.maxSpeed = 127}, false);
     chassis.correctAt0({"front"});
 
     //goes for third ring
-    chassis.turnToHeading(90, 1000, {.maxSpeed = 127}, false);
+    chassis.turnToHeading(80, 1000, {.maxSpeed = 127}, false);
     //chassis.correctAt90({"left"});
     chassis.moveDistance(16, 800, {.maxSpeed = 127}, false);
     chassis.moveDistance(-36, 800, {.forwards = false, .maxSpeed = 80}, false);
     chassis.turnToHeading(310, 900, {.maxSpeed = 100}, false);
 
-    chassis.moveDistance(38, 1500, {.minSpeed = 127}, false); //1000
+    chassis.moveDistance(40, 900, {.minSpeed = 127}, false); //1000
     chassis.moveDistance(-15, 500, {.forwards = false, .maxSpeed = 80}, false);
-    chassis.moveDistance(10, 500, {.maxSpeed = 80}, false);
+    chassis.moveDistance(15, 500, {.maxSpeed = 80}, false);
 
     chassis.turnToHeading(-90, 500, {.maxSpeed = 127}, false);
 
@@ -53,7 +53,10 @@ void signature_red_negtive_qual(){
 
     chassis.moveToPoint(-28, 24, 1100, {.forwards = false,  .maxSpeed = 127}, false);
     chassis.turnToPoint(-26, 0, 700, {.maxSpeed = 127}, false);
-    chassis.moveToPoint(-24, 0, 1800, { .maxSpeed = 37}, false);
+    chassis.moveToPoint(-24, 0, 1200, { .maxSpeed = 60}, false);
+
+    arm.moveToState(ArmNamespace::State::UP);
+
 
     // chassis.turnToPoint(-15, 36.5, 800, {.maxSpeed = 100}, false);
     // chassis.moveDistance(15, 1000, {.maxSpeed = 127}, false);
