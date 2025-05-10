@@ -55,7 +55,7 @@ void signature_red_negtive_qual(){
     chassis.turnToPoint(-26, 0, 700, {.maxSpeed = 127}, false);
     chassis.moveToPoint(-24, 0, 1200, { .maxSpeed = 60}, false);
 
-    arm.moveToState(ArmNamespace::State::UP);
+    arm.moveToState(ArmNamespace::State::DISCORE_UP);
 
 
     // chassis.turnToPoint(-15, 36.5, 800, {.maxSpeed = 100}, false);
